@@ -22,6 +22,7 @@ body {
 
 h1,
 h2,
+h3,
 h4,
 h5,
 p,
@@ -179,4 +180,64 @@ small {
 /* 📱 Aire lateral en el grid */
 #contenedorC {
   padding: 0 10px;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente los hijos */
+  justify-content: center;
+  width: 80%;
+  max-width: 500px; /* Limita el ancho para que no se vea gigante */
+  margin: 0 auto 1rem auto; /* Centra el bloque y da espacio abajo */
+  position: relative; /* Importante para que la lista flote bien */
+}
+
+.search-input {
+  width: 80%;
+  max-width: 500px;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: 2px solid #f0e6ffe3; /* Lavanda pastel */
+  border-radius: 15px;
+  outline: none;
+  background-color: #ffffffad;
+  margin-bottom: 10px; /* Espacio pequeño para la lista */
+}
+
+/* La lista de sugerencias debe ser ABSOLUTE */
+.suggestions-list {
+  position: absolute;
+  top: 55px; /* Ajusta según la altura de tu input */
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  z-index: 999; /* Para que esté sobre la card del clima */
+}
+
+.suggestions-list li {
+  padding: 10px 10px;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.2s;
+}
+
+.suggestions-list li:hover {
+  background-color: #fce4ec; /* Rosa pastel al pasar el mouse */
+  color: #000;
+}
+
+/* Animación de entrada */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
